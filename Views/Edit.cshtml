@@ -1,0 +1,56 @@
+﻿@model Instructor
+
+<form asp-action="SaveEdit" method="post">
+
+    <input type="hidden" asp-for="Id" />
+
+    <div>
+
+        <label>Name</label>
+
+        <input asp-for="Name" />
+
+    </div>
+
+    <div>
+
+        <label>Salary</label>
+
+        <input asp-for="Salary" />
+
+    </div>
+
+    <div>
+
+        <label>Address</label>
+
+        <input asp-for="Address" />
+
+    </div>
+
+    <div>
+
+        <label>Department</label>
+
+        <select asp-for="Dept_Id">
+
+            @foreach (var item in ViewBag.DeptList)
+            {
+                <option value="@item.Id">
+
+                    @item.Name
+
+                </option>
+            }
+
+        </select>
+
+    </div>
+
+    <button type="submit">
+
+        Save
+
+    </button>
+
+</form>

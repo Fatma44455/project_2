@@ -1,0 +1,26 @@
+﻿@model List<Instructor>
+
+<form method="get" action="/Instructor/Index">
+    <input type="text" name="searchName" placeholder="Search By Name" />
+    <button type="submit">Search</button>
+</form>
+
+<table class="table table-bordered">
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Name</td>
+            <td>@item.Salary</td>
+
+            <td>
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a>
+            </td>
+
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+            </td>
+        </tr>
+    }
+
+</table>
